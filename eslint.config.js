@@ -1,11 +1,13 @@
 const nx = require('@nx/eslint-plugin');
+const storybook = require('eslint-plugin-storybook');
 
 module.exports = [
   ...nx.configs['flat/base'],
   ...nx.configs['flat/typescript'],
   ...nx.configs['flat/javascript'],
+  ...storybook.configs['flat/recommended'],
   {
-    ignores: ['**/dist'],
+    ignores: ['**/dist', '!.storybook'],
   },
   {
     files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
